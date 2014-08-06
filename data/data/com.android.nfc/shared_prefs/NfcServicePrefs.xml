@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="first_boot" value="false" />
+    <boolean name="nfc_on" value="false" />
+    <boolean name="airplane_override" value="false" />
+</map>

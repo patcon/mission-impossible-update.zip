@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="pref_anonymous_opt_in" value="false" />
+    <long name="pref_anonymous_checked_in" value="1407192560017" />
+</map>
