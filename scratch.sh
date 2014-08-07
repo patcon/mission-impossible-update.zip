@@ -90,3 +90,6 @@ adb shell input keyevent KEYCODE_BACK # exit settings
 
 # Add PIN: bring PIN choice screen up on device:
 su root am start -n com.android.settings/com.android.settings.ChooseLockPassword
+
+# SCRATCH: Copy fresh appops.xml from device to set initial privacy guard perms:
+# /data/system/appops.xml
