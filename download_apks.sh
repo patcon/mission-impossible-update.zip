@@ -4,7 +4,6 @@ BASEDIR=$(dirname $0)
 
 # Only diff from article is Orbot v14.0.4.1 instead of v13.0.7
 apk_files=( \
-  org.fdroid.fdroid_700.apk \
   org.torproject.android_109.apk # v14.0.4.1 \
   com.googlecode.droidwall_157.apk \
   com.xabber.androiddev_81.apk \
@@ -24,10 +23,9 @@ apk_files=( \
   uk.co.ashtonbrsc.android.intentintercept_204.apk \
 )
 
-#for pkg in "${apk_files[@]}"
-#do
-#  wget https://f-droid.org/repo/${pkg}
-#done
+echo "--- Downloading F-Droid app market APK..."
+cd ${BASEDIR}/system/app
+wget --no-verbose --continue https://f-droid.org/repo/org.fdroid.fdroid_710.apk
 
 echo "--- Downloading ${#apk_files[@]} F-Droid packages..."
 echo "    This is parallel, but may still take awhile."

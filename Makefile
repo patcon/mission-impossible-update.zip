@@ -1,5 +1,6 @@
 download_apks:
 	mkdir -p data/app
+	mkdir -p system/app
 	./download_apks.sh
 
 package:
