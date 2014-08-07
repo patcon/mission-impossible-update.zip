@@ -2,10 +2,10 @@
 
 BASEDIR=$(dirname $0)
 
-# Only diff from article is Orbot v14.0.4.1 instead of v13.0.7
+# Only diff from article is Orbot v14.0.5.1 instead of v13.0.7
 apk_files=( \
-  org.torproject.android_109.apk # v14.0.4.1 \
-  com.googlecode.droidwall_157.apk \
+  org.torproject.android_114.apk # v14.0.5.1 \
+  org.ethack.orwall_18.apk \ # orWall rather than Droidwall
   com.xabber.androiddev_81.apk \
   org.sufficientlysecure.localcalendar_6.apk \
   org.linphone_2120.apk \
