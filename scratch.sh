@@ -93,3 +93,6 @@ su root am start -n com.android.settings/com.android.settings.ChooseLockPassword
 
 # SCRATCH: Copy fresh appops.xml from device to set initial privacy guard perms:
 # /data/system/appops.xml
+
+# SCRATCH: Setting launcher apps happens in this db:
+# /data/data/com.cyanogenmod.trebuchet/databases/launcher.db
