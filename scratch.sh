@@ -30,17 +30,6 @@ echo
 # Perhaps it's "unknown" in wifi-only devices.
 # NOTE: value doesn't exist on Nexus 7 wifi :)
 
-## Get CM11 release
-
-# Check device type via `ro.product.device`
-# Examples: mako, flo, etc.
-
-# Note: Whitespace character \r was causing odd formatting.
-device_name=$(adb shell getprop ro.product.device | tr -d "\r")
-# if (isNexus)
-echo "--- Please download the M6 snapshot from this page:"
-echo "    https://download.cyanogenmod.org/?device=${device_name}&type=snapshot"
-
 ## Get TWRP
 
 twrp_version="2.7.0.0"

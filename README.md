@@ -11,6 +11,10 @@ published by the Tor Project][article].
 
 ## Install
 
+    make cm_dl_link
+
+## Build
+
     make download_apks
     make package
     make goto_fastboot
@@ -19,7 +23,6 @@ published by the Tor Project][article].
 Scratch scripts and notes, to be organized later, are stored in
 `scratch.sh`. Oddly enough, this script is not yet intended to be run.
 
-## Build
 
 <!-- Links -->
    [tutorial]: https://trac.torproject.org/projects/tor/wiki/doc/HardeningAndroid#BasebandRemoval

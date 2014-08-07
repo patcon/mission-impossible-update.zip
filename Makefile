@@ -1,3 +1,6 @@
+cm_dl_link:
+	scripts/cyanogenmod_download_link.sh
+
 download_apks:
 	mkdir -p data/app
 	mkdir -p system/app
