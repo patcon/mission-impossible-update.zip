@@ -96,3 +96,22 @@ su root am start -n com.android.settings/com.android.settings.ChooseLockPassword
 
 # SCRATCH: Setting launcher apps happens in this db:
 # /data/data/com.cyanogenmod.trebuchet/databases/launcher.db
+
+## ENCRYPT
+
+# read password twice
+read -s -p "Password: " password
+echo
+read -s -p "Password (again): " password2
+
+# check if passwords match and if not ask again
+while [ "$password" != "$password2" ];
+do
+    echo
+    echo "Please try again"
+    read -s -p "Password: " password
+    echo
+    read -s -p "Password (again): " password2
+done
+
+adb shell su -c "vdc cryptfs enablecrypto inplace $password"
