@@ -1,0 +1,1 @@
+UPDATE secure SET value="com.android.inputmethod.latin/.LatinIME" WHERE name="enabled_input_methods";
