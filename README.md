@@ -7,11 +7,18 @@ published by the Tor Project][article].
 ## Requirements
 
 - `adb` CLI tool
+- `fastboot` CLI tool
 - `wget` CLI tool
+
+    apt-get install android-tools-adb android-tools-fastboot
+
 
 ## Install
 
     make cm_dl_link
+    make dl_twrp
+    make set_pin_lock
+    make encrypt_device
 
 ## Build
 

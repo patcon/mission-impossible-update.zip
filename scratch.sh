@@ -30,19 +30,6 @@ echo
 # Perhaps it's "unknown" in wifi-only devices.
 # NOTE: value doesn't exist on Nexus 7 wifi :)
 
-## Get TWRP
-
-twrp_version="2.7.0.0"
-twrp_download_url="http://techerrata.com/file/twrp2/${device_name}/openrecovery-twrp-${twrp_version}-${device_name}.img"
-
-echo "--- Downloading Team Win Recovery Project..."
-echo "    TWRP Version: ${twrp_version}"
-echo "    Device Codename:  ${device_name}"
-echo
-echo "---- **** WGET OUTPUT ****"
-echo
-wget --continue --progress=bar ${twrp_download_url}
-
 ## RESTART PHONE IN BOOT
 
 # confirm adb works
@@ -78,18 +65,8 @@ adb push gapps-kk-20140105-signed.zip /sdcard/
 # Disable Setup wizard: (doesn't work..)
 adb shell setprop ro.setupwizard.mode DISABLE
 
-# turn on airplane mode
-# See: http://stackoverflow.com/a/23413344/504018
-adb shell am start -a android.settings.AIRPLANE_MODE_SETTINGS # open settings
-adb shell input keyevent KEYCODE_ENTER # highlight airplane mode
-adb shell input keyevent KEYCODE_ENTER # enable airplane mode
-adb shell input keyevent KEYCODE_BACK # exit settings
-
 # DEVICE:
 # - Skip account creations
-
-# Add PIN: bring PIN choice screen up on device:
-su root am start -n com.android.settings/com.android.settings.ChooseLockPassword
 
 # SCRATCH: Copy fresh appops.xml from device to set initial privacy guard perms:
 # /data/system/appops.xml
@@ -97,21 +74,4 @@ su root am start -n com.android.settings/com.android.settings.ChooseLockPassword
 # SCRATCH: Setting launcher apps happens in this db:
 # /data/data/com.cyanogenmod.trebuchet/databases/launcher.db
 
-## ENCRYPT
-
-# read password twice
-read -s -p "Password: " password
-echo
-read -s -p "Password (again): " password2
-
-# check if passwords match and if not ask again
-while [ "$password" != "$password2" ];
-do
-    echo
-    echo "Please try again"
-    read -s -p "Password: " password
-    echo
-    read -s -p "Password (again): " password2
-done
-
-adb shell su -c "vdc cryptfs enablecrypto inplace $password"
+# Add guardian project f-droid repo: https://guardianproject.info/2012/03/15/our-new-f-droid-app-repository/
