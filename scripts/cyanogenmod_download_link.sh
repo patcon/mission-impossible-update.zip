@@ -1,10 +1,10 @@
-## Get CM11 release
+#!/usr/bin/env bash
 
-# Check device type via `ro.product.device`
-# Examples: mako, flo, etc.
+current_dir="$(dirname "$0")"
 
-# Note: Whitespace character \r was causing odd formatting.
-device_name=$(adb shell getprop ro.product.device | tr -d "\r")
+source $current_dir/common.sh
+device_name=`get_device_name`
+
 # if (isNexus)
 echo "--- Please download the M9 snapshot from this page:"
 echo "    https://download.cyanogenmod.org/?device=${device_name}&type=snapshot"
