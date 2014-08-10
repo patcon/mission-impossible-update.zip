@@ -1,0 +1,8 @@
+backup [flags] mission-impossible
+wipe cache
+wipe data
+wipe dalvik
+wipe [other?]
+install path/to/cm-11.zip
+# install path/to/gapps.zip
+install path/to/mission-impossible-update.zip
